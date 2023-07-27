@@ -20,7 +20,7 @@ with models.DAG(
         import logging
         api_url = "http://10.0.0.22"
         response = requests.get(api_url, verify=False)        
-        logging.info(response.json())
+        logging.info(response.text)
 
     gke_service_call = python_operator.PythonOperator(
         task_id="gke_service_call", python_callable=gke_service_call
