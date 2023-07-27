@@ -18,7 +18,7 @@ with models.DAG(
     def gke_service_call():
         import requests
         import logging
-        api_url = "10.0.0.22"
+        api_url = "http://10.0.0.22"
         response = requests.get(api_url, verify=False)        
         logging.info(response.json())
 
